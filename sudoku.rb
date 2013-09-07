@@ -49,7 +49,6 @@ SDL::TTF.init
 font = SDL::TTF.open('sample.ttf',50)
 font.style = SDL::TTF::STYLE_NORMAL
 
-
 x = 0
 y = 0
 key_press = true
