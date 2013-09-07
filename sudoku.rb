@@ -46,7 +46,7 @@ screen = SDL.set_video_mode(SCREEN_W, SCREEN_H, 16, SDL::SWSURFACE)
 SDL::Surface.autoLockON
 
 SDL::TTF.init
-font = SDL::TTF.open('sample.ttf',50)
+font = SDL::TTF.open('',50)
 font.style = SDL::TTF::STYLE_NORMAL
 
 x = 0
