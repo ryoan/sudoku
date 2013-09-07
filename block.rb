@@ -1,9 +1,5 @@
 require "sdl"
 
-#!/usr/local/bin/ruby
-#
-# 数独 を解く
-#
 class N
 
 def printd(d)
