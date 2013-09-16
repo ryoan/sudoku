@@ -76,27 +76,27 @@ else key_press = false
 end
 
 if input.one then 
-	sheet[x][y]=1
+	sheet[y][x]=1
 elsif input.two then
-	sheet[x][y]=2
+	sheet[y][x]=2
 elsif input.three then
-	sheet[x][y]=3
+	sheet[y][x]=3
 elsif input.four then
-	sheet[x][y]=4
+	sheet[y][x]=4
 elsif input.five then
-	sheet[x][y]=5
+	sheet[y][x]=5
 elsif input.six then
-	sheet[x][y]=6
+	sheet[y][x]=6
 elsif input.seven then
-	sheet[x][y]=7
+	sheet[y][x]=7
 elsif input.eight then
-	sheet[x][y]=8
+	sheet[y][x]=8
 elsif input.nine then
-	sheet[x][y]=9
+	sheet[y][x]=9
 elsif input.zero then
-	sheet[x][y]=0
+	sheet[y][x]=0
 elsif input.backspace then
-	sheet[x][y]=0
+	sheet[y][x]=0
 end
 
 kaitou = 1
@@ -129,8 +129,10 @@ break if input.enter && kaitou == 1
   (0..8).each {|i|
 	(0..8).each {|j|
 		sheet[i][j] = n.question[i][j] if n.question[i][j] != 0
-		font.drawSolidUTF8(screen,sheet[i][j].to_s,(BLOCK_SIZE*i)+BLOCK_SIZE+15,BLOCK_SIZE+BLOCK_SIZE*j,0,0,0) if sheet[i][j] != 0
-		font.drawSolidUTF8(screen,n.question[i][j].to_s,(BLOCK_SIZE*i)+BLOCK_SIZE+15,BLOCK_SIZE+BLOCK_SIZE*j,255,0,0) if n.question[i][j] !=0
+		font.drawSolidUTF8(screen,sheet[i][j].to_s,(BLOCK_SIZE*j)+BLOCK_SIZE+15,BLOCK_SIZE+BLOCK_SIZE*i,0,0,0) if sheet[i][j] != 0
+#		font.drawSolidUTF8(screen,sheet[i][j].to_s,(BLOCK_SIZE*i)+BLOCK_SIZE+15,BLOCK_SIZE+BLOCK_SIZE*j,0,0,0) if sheet[i][j] != 0
+		font.drawSolidUTF8(screen,n.question[i][j].to_s,(BLOCK_SIZE*j)+BLOCK_SIZE+15,BLOCK_SIZE+BLOCK_SIZE*i,255,0,0) if n.question[i][j] !=0
+#		font.drawSolidUTF8(screen,n.question[i][j].to_s,(BLOCK_SIZE*i)+BLOCK_SIZE+15,BLOCK_SIZE+BLOCK_SIZE*j,255,0,0) if n.question[i][j] !=0
 	}
   }
   fill_number=Array.new(9,0)
